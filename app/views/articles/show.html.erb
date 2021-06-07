@@ -1,0 +1,22 @@
+<h1 class="text-center mt-4">Listing Article</h1>
+<div class="container">
+	
+	<div class="row justify-content-md-center">
+		<div class="col-8 mt-4">
+			<div class="card text-center shadow mb-5 bg-white rounded">
+				<div class="card-header font-italic">by Shivam Mourya</div>
+				<div class="card-body">
+					<h5 class="card-title "><h3><%= @article.title%></h3>
+						<div class="card-text text-left"><%=simple_format(@article.description)%></div>
+						<div>
+							<%= link_to 'Edit',edit_article_path(@article), class: 'btn btn-outline-warning' %>
+							<%= link_to 'Delete',article_path(@article),method: :delete,    data:{confirm:"Are you sure"}, class: 'btn btn-outline-danger'%>
+						</div>
+					</div>
+					<div class="card-footer text-muted font-italic">
+						<small>Created <%=time_ago_in_words(@article.created_at)%> ago, edited_at  <%=time_ago_in_words(@article.updated_at)%> ago</small>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
