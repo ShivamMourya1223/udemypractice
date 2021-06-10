@@ -30,7 +30,7 @@
 </div>
 
 <div class="form-group row justify-content-center">
-    <%=f.submit "SignUp!",class:"btn btn-outline-dark btn-lg"%>
+    <%=f.submit(@user.new_record? ? "SignUp!" : "Update_Account",class:"btn btn-outline-dark btn-lg")%>
 
     <%end%>
     <%=link_to'back',articles_path,class:"btn btn-outline-dark mr-5"%>
